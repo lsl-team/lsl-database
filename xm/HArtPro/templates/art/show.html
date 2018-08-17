@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block css %}
+    <style>
+        .row {
+            padding: 10px;
+        }
+
+        #art_content, #art_top {
+            margin: 1px;
+            border: 1px solid dodgerblue;
+        }
+
+        #art_top h2 {
+            margin: 0px;
+            padding: 5px;
+            background-color: lightblue;
+        }
+
+
+    </style>
+{% endblock %}
+{% block content %}
+    <div id="content">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="art_content">
+                    <h1 class="text-center">{{ art.title }}</h1>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="/static/uploads/{{ art.cover}}" width="180px" height="220px">
+                        </div>
+                        <div class="col-md-9">
+                            <p><b>作者: &nbsp;&nbsp;{{ art.author }}</b></p>
+                            <p><b>介绍</b>{{ art.content|safe }}</p>
+                        </div>
+                    </div>
+                    <div class="text-center" style="padding: 10px">
+                        <a class="btn btn-success">立即阅读</a>
+                        <a class="btn btn-danger">加入书架</a>
+                        <a class="btn btn-primary">立即购买</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="art_top">
+                    <h2 class="text-center"><a href="#">阅读排行</a> </h2>
+                    <ul>
+                        <li>大商之行1</li>
+                        <li>大商之行2</li>
+                        <li>大商之行3</li>
+                        <li>大商之行4</li>
+                        <li>大商之行5</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
